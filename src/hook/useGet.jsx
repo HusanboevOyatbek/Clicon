@@ -16,6 +16,8 @@ function useGet({url}) {
             setLoadin(false)
         }
     }
+    
+    
 
     useEffect(() =>{
         getData()

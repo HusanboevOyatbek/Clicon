@@ -3,12 +3,16 @@ import { FaRegHeart } from 'react-icons/fa';
 import { FiShoppingCart } from "react-icons/fi";
 import { IoPersonOutline, IoSearch } from 'react-icons/io5';
 import { MdOutlinePersonOutline } from 'react-icons/md';
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom'
 
 function Header() {
+
+    const cart = useSelector((state) => state.cart)
+
     return (
         <>
-            <header className='bg-[#1B6392]'>
+            <header className='bg-[#1B6392] fixed top-0 left-0 w-full z-50 shadow-md'>
                 <div className=" container mx-auto  py-[15px] px-[20px] flex items-center text-center  " >
                     <Link to={"/"} className="flex items-center gap-2 md:gap-3">
                         <img className=" " src="/imgs/Logo.png" alt="Kuda Pizza Logo" />
@@ -38,11 +42,23 @@ function Header() {
 
 
                     <ul className='flex justify-center text-center  gap-[20px]'>
-                        <li>
-                            <NavLink>
-                                <FiShoppingCart className='text-white max-w-[25px] w-full h-[25px]' />
+                        <li className="relative">
+                            <NavLink
+                            to={"cart"}
+                            className="relative flex items-center">
+                                <FiShoppingCart className="text-white w-[25px] h-[25px]" />
+
+                                {/* Badge */}
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-white
+                     text-xs w-5 h-5 flex items-center justify-center
+                     rounded-full font-bold">
+                                    {
+                                        cart?.length
+                                    }
+                                </span>
                             </NavLink>
                         </li>
+
 
                         <li>
                             <NavLink>
