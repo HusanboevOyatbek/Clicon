@@ -8,7 +8,6 @@ function ProductPage() {
           <h1 className="text-4xl font-bold mb-8 uppercase">CATEGORY</h1>
 
           <div className="space-y-2">
-            {/* Category Item 1 - Active */}
             <label className="flex items-center gap-3 cursor-pointer group">
               <input
                 type="radio"
