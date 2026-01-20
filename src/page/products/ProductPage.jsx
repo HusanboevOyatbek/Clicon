@@ -17,7 +17,7 @@ function ProductPage() {
                 defaultChecked
               />
               <span className="text-sm text-gray-700 group-hover:text-orange-500 transition">
-                Electronics Devices
+                Electronics DeviceS
               </span>
             </label>
 
