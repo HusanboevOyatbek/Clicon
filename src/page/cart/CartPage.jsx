@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrease, increase, removeProduct } from '../../features/cartSlise';
+import { Link } from 'react-router-dom';
 
 function CartPage() {
 
@@ -101,9 +102,9 @@ function CartPage() {
                 </div>
               </div>
 
-              <button className='w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors'>
+              <Link to={"/order"} className='inline-block text-center w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors'>
                 To'lovga o'tish
-              </button>
+              </Link>
             </div>
           </div>
         </div>

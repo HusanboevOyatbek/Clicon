@@ -151,7 +151,7 @@ function HomePage() {
 
                                             {/* CART */}
                                             {
-                                                cart.find((item) => item.id === el.id) ? ( <button
+                                                cart?.find((item) => item.id === el.id) ? ( <button
                                                     onClick={() => dispatch(removeToCart(el))}
                                                     className="w-12 h-12 rounded-full bg-white text-gray-700 flex items-center justify-center translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100 hover:bg-[#FF7010] hover:text-white"
                                                 >
