@@ -1,10 +1,11 @@
-import React from 'react'
 import useGet from '../../hook/useGet'
 import { FaHeart, FaShoppingCart, FaEye } from "react-icons/fa";
 import { BsCartPlusFill, BsFillCartDashFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeToCart } from '../../features/cartSlise';
 import { Link } from 'react-router-dom';
+import Portfolios from '../../components/portfolios/Portfolios';
+import AdsSwp from '../../components/pagination/AdsSwp';
 
 
 function HomePage() {
@@ -12,7 +13,7 @@ function HomePage() {
     const cart = useSelector((state) => state.cart)
     const { data } = useGet({ url: "products?limit=100" });
     const products = data?.products;
-    const sliceProducts = products?.slice(34, 42)
+    const sliceProducts = products?.slice(84, 92)
     const product = products ? products[80] : "";
     console.log(sliceProducts);
     console.log(products);
@@ -24,9 +25,11 @@ function HomePage() {
             <section>
                 <div className="container  mx-auto px-30">
                     <div className="flex gap-5">
-                        <div className="">
-                            <img src="/imgs/Xbox.png" alt="" />
-                        </div>
+                            <div className="">
+                                <AdsSwp />
+                            </div>
+
+                            
                         <div className="">
                             <div className="">
                                 <img src="/imgs/phone.png" alt="" />
@@ -189,8 +192,22 @@ function HomePage() {
                                 </div>
                             ))}
                         </div>
+
+
+
+
+
+                        
                     </div>
 
+
+
+                    
+
+                </div>
+
+                <div className="container mx-auto px-6">
+                    <Portfolios />
                 </div>
             </section>
         </>

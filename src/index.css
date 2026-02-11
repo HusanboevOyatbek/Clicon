@@ -3,3 +3,7 @@
 button{
     cursor: pointer;
 }
+
+.pagination{
+    width: 90%;
+}
